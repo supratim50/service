@@ -8,8 +8,12 @@
   color: #fff !important;
 }
 
-.text-dark {
+.text-dark-blue {
   color: #03215d !important;
+}
+
+.text-dark-grey {
+  color: rgba(33, 48, 77, 0.79) !important;
 }
 
 .text-light-grey {

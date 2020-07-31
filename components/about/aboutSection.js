@@ -7,7 +7,7 @@ const AboutUs = () => {
       <div className="container">
         <PrimaryHeading
           title="Some informations about us"
-          classList="text-center text-dark"
+          classList="text-center text-dark-blue font-weight-bold"
         />
         <div className="row mx-auto margin-top">
           <div className="col-12 col-lg-5 px-0 text-center text-lg-left">
@@ -18,7 +18,7 @@ const AboutUs = () => {
             />
           </div>
           <div className="col-12 col-lg-7 mt-5 mt-lg-0 px-0 px-lg-2">
-            <p className="paragraph-text text-dark mb-0">
+            <p className="paragraph-text text-dark-grey mb-0">
               Webguru Infosystems, an ISO 9001:2015 certified futuristic
               technology firm offers total digital solutions for a global
               clientele at affordable rates. Our 150+ team of expert IT

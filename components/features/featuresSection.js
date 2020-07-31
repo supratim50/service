@@ -8,12 +8,11 @@ const Features = () => {
     <section className="section-pt section-pb position-relative">
       <PrimaryHeading
         title="Get to know or FEATURES"
-        classList="font-weight-bold text-dark text-center"
+        classList="font-weight-bold text-dark-blue text-center"
       />
       <div className="container margin-top">
         <FeaturesComponents
           classList="blue"
-          odd
           icon={<FaCompressAlt />}
           heading="Features One"
           text="Loo car boot bodge smashing I up the duff horse play give us a
@@ -22,6 +21,7 @@ const Features = () => {
         />
         <FeaturesComponents
           classList="sky"
+          even
           icon={<FaCompressAlt />}
           heading="Features Two"
           text="Loo car boot bodge smashing I up the duff horse play give us a
@@ -30,7 +30,6 @@ const Features = () => {
         />
         <FeaturesComponents
           classList="yellow"
-          odd
           icon={<FaCompressAlt />}
           heading="Features Three"
           text="Loo car boot bodge smashing I up the duff horse play give us a
@@ -39,6 +38,7 @@ const Features = () => {
         />
         <FeaturesComponents
           classList="violate"
+          even
           icon={<FaCompressAlt />}
           heading="Features Four"
           text="Loo car boot bodge smashing I up the duff horse play give us a

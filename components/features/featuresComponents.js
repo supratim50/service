@@ -1,5 +1,5 @@
 const FeaturesComponents = ({
-  odd,
+  even,
   icon,
   heading,
   text,
@@ -8,44 +8,68 @@ const FeaturesComponents = ({
 }) => {
   return (
     <div className="row mx-auto">
-      {/* images */}
-      <div className="col-12 col-md-4 px-0 d-flex justify-content-center align-items-center">
-        {odd ? (
-          <img className="img-fluid" src={imageUrl} alt={heading} />
-        ) : (
-          <div className="text-box">
+      {/* first */}
+      <div
+        className={`col-12 col-md-4 px-0 d-flex justify-content-center align-items-center ${
+          even ? "order-3 order-md-1" : ""
+        }`}
+      >
+        {even ? (
+          <div className="text-box pt-5 mt-3 pt-md-0 mt-md-0">
             <h3
-              className={`mb-2 heading-secondary font-weight-bold blue text-uppercase text-right ${
+              className={`mb-2 heading-secondary font-weight-bold blue text-uppercase text-center text-md-right ${
                 classList ? classList : classList
               }`}
             >
               {heading}
             </h3>
-            <p className="paragraph-text text-dark text-right">{text}</p>
+            <p className="paragraph-text text-dark-grey text-md-right mb-0 text-center">
+              {text}
+            </p>
           </div>
+        ) : (
+          <img
+            className="img-fluid pt-5 mt-3 pt-md-0 mt-md-0"
+            src={imageUrl}
+            alt={heading}
+          />
         )}
       </div>
       {/* middle circle */}
-      <div className="col-12 col-md-4 px-0 d-flex justify-content-center align-items-center">
+      <div
+        className={`col-12 col-md-4 px-0 d-flex justify-content-center align-items-center pt-5 pt-md-0 ${
+          even ? "order-2" : ""
+        }`}
+      >
         <div className="middle-circle rounded-circle d-flex justify-content-center align-items-center">
           <i className={`circle-icon ${classList ? classList : ""}`}>{icon}</i>
         </div>
       </div>
-      {/* text */}
-      <div className="col-12 col-md-4 px-0 d-flex justify-content-center align-items-center">
-        {odd ? (
-          <div className="text-box">
+      {/* last */}
+      <div
+        className={`col-12 col-md-4 px-0 d-flex justify-content-center align-items-center  ${
+          even ? "order-1 order-md-3" : ""
+        }`}
+      >
+        {even ? (
+          <img
+            className="img-fluid pt-5 mt-3 pt-md-0 mt-md-0"
+            src={imageUrl}
+            alt={heading}
+          />
+        ) : (
+          <div className="text-box pt-5 mt-3 pt-md-0 mt-md-0">
             <h3
-              className={`mb-2 heading-secondary font-weight-bold blue text-uppercase ${
+              className={`mb-2 heading-secondary font-weight-bold blue text-uppercase text-center text-md-left ${
                 classList ? classList : ""
               }`}
             >
               {heading}
             </h3>
-            <p className="paragraph-text text-dark">{text}</p>
+            <p className="paragraph-text text-dark-grey mb-0 text-center text-md-left">
+              {text}
+            </p>
           </div>
-        ) : (
-          <img className="img-fluid" src={imageUrl} alt={heading} />
         )}
       </div>
 
@@ -60,6 +84,12 @@ const FeaturesComponents = ({
           box-shadow: 0px 10px 50px rgba(40, 73, 157, 0.04),
             0px 2px 18px rgba(40, 73, 157, 0.04),
             0px 0px 6px rgba(40, 73, 157, 0.04);
+        }
+        @media screen and (max-width: 767px) {
+          .middle-circle {
+            width: 70px;
+            height: 70px;
+          }
         }
         .circle-icon {
           font-size: 25px;
