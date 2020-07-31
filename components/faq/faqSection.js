@@ -12,7 +12,7 @@ const FaqSection = () => {
       />
       <div className="container">
         <div className="row mx-auto margin-top">
-          <div className="col-12 col-lg-5 px-0 text-center text-lg-left d-flex align-items-center">
+          <div className="col-12 col-lg-5 pt-5 px-0 text-center text-lg-left">
             <img
               className="img-fluid"
               src="/assets/images/FAQs.svg"
