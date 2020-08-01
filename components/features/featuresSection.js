@@ -2,6 +2,7 @@ import { FaCompressAlt } from "react-icons/fa";
 
 import PrimaryHeading from "../heading/primaryHeading";
 import FeaturesComponents from "./featuresComponents";
+import Wave from "../wave/wave";
 
 const Features = () => {
   return (
@@ -46,6 +47,8 @@ const Features = () => {
           imageUrl="/assets/images/Feature-4.svg"
         />
       </div>
+
+      <Wave imageUrl="/assets/images/wave-grey.svg" />
     </section>
   );
 };

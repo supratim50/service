@@ -1,5 +1,6 @@
 import PrimaryHeading from "../heading/primaryHeading";
 import PrimaryButton from "../buttons/PrimaryButton";
+import Wave from "../wave/wave";
 
 const AboutUs = () => {
   return (
@@ -41,41 +42,13 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div className="wave position-absolute w-100">
+      {/* <div className="wave position-absolute w-100">
         <img className="w-100" src="/assets/images/wave-white.svg" alt="Wave" />
-      </div>
+      </div> */}
+      <Wave imageUrl="/assets/images/wave-white.svg" />
       <style jsx>{`
         section {
           background: #fafafa;
-        }
-        .wave {
-          bottom: -123px;
-          left: 0;
-        }
-        @media screen and (max-width: 1250px) {
-          .wave {
-            bottom: -100px;
-          }
-        }
-        @media screen and (max-width: 992px) {
-          .wave {
-            bottom: -80px;
-          }
-        }
-        @media screen and (max-width: 820px) {
-          .wave {
-            bottom: -60px;
-          }
-        }
-        @media screen and (max-width: 600px) {
-          .wave {
-            bottom: -40px;
-          }
-        }
-        @media screen and (max-width: 410px) {
-          .wave {
-            bottom: -20px;
-          }
         }
       `}</style>
     </section>

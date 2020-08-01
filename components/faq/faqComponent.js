@@ -39,7 +39,7 @@ const FaqComponent = ({ question, icon, answer, classList }) => {
         .question {
           color: #2855cb !important;
           cursor: pointer;
-          background-color: #f7f8fc;
+          background-color: #fff;
           border-radius: 10px;
           min-height: 88px;
         }

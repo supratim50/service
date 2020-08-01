@@ -46,6 +46,11 @@ const FaqSection = () => {
           </div>
         </div>
       </div>
+      <style jsx>{`
+        section {
+          background: #fafafa !important;
+        }
+      `}</style>
     </section>
   );
 };

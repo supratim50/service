@@ -2,6 +2,12 @@
   font-family: sans-serif !important;
 }
 
+/* ================== background ===================== */
+.bg-white {
+  background-color: #fff !important;
+  color: rgba(33, 48, 77, 0.79) !important;
+}
+
 /* ========================= text =======================  */
 /* color  */
 .text-white {
@@ -23,7 +29,7 @@
 /* size */
 .heading-primary {
   font-size: 36px !important;
-  line-height: 32px !important;
+  line-height: 44px !important;
 }
 @media screen and (max-width: 992px) {
   .heading-primary {
