@@ -3,9 +3,9 @@ import { FaCommentAlt } from "react-icons/fa";
 import HeadingPrimary from "../heading/primaryHeading";
 import FaqComponent from "../faq/faqComponent";
 
-const FaqSection = () => {
+const FaqSection = ({ extreHtml }) => {
   return (
-    <section className="section-pt section-pb">
+    <section className="section-pt section-pb position-relative">
       <HeadingPrimary
         title="Having doubts? Check our FAQs"
         classList="font-weight-bold text-center text-dark-blue"
@@ -46,6 +46,7 @@ const FaqSection = () => {
           </div>
         </div>
       </div>
+      {extreHtml ? extreHtml : ""}
       <style jsx>{`
         section {
           background: #fafafa !important;

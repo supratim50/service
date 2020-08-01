@@ -7,7 +7,7 @@ import PrimaryButton from "../buttons/PrimaryButton";
 
 const FormBox = ({ classList }) => {
   return (
-    <div className={`form-box ${classList}`}>
+    <div className={`form-box position-relative overflow-hidden ${classList}`}>
       <Input placeholder="Name" />
       <Input placeholder="Email" classList="mt-3" />
       <Input placeholder="Phone" classList="mt-3" />
@@ -26,6 +26,15 @@ const FormBox = ({ classList }) => {
           box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04),
             0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
           border-radius: 8px;
+        }
+        .form-box::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 8px;
+          top: 0;
+          left: 0;
+          background-color: #2855cb;
         }
         @media screen and (max-width: 992px) {
           .form-box {

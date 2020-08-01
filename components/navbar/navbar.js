@@ -24,7 +24,7 @@ const Navbar = ({ close, textColor }) => {
         Yaxis === 0 ? "" : "scrolled"
       }`}
     >
-      <nav class="navbar navbar-expand-lg py-3">
+      <nav className="navbar navbar-expand-lg py-3">
         <div className="container position-relative">
           <Link href="/">
             <a>
