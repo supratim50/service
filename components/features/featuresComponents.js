@@ -5,6 +5,8 @@ const FeaturesComponents = ({
   text,
   imageUrl,
   classList,
+  dataSal,
+  dataSalDuration,
 }) => {
   return (
     <div className="row mx-auto">
@@ -32,6 +34,8 @@ const FeaturesComponents = ({
             className="img-fluid pt-5 mt-3 pt-md-0 mt-md-0"
             src={imageUrl}
             alt={heading}
+            data-sal={dataSal}
+            data-sal-duration={dataSalDuration}
           />
         )}
       </div>
@@ -56,6 +60,8 @@ const FeaturesComponents = ({
             className="img-fluid pt-5 mt-3 pt-md-0 mt-md-0"
             src={imageUrl}
             alt={heading}
+            data-sal={dataSal && dataSal}
+            data-sal-duration={dataSalDuration && dataSalDuration}
           />
         ) : (
           <div className="text-box pt-5 mt-3 pt-md-0 mt-md-0">

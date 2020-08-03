@@ -1,9 +1,16 @@
+import { useEffect } from "react";
+import sal from "sal.js";
 import { FaCommentAlt } from "react-icons/fa";
 // components
 import HeadingPrimary from "../heading/primaryHeading";
 import FaqComponent from "../faq/faqComponent";
+import Wave from "../wave/wave";
 
 const FaqSection = ({ extreHtml }) => {
+  useEffect(() => {
+    sal();
+  });
+
   return (
     <section className="section-pt section-pb position-relative">
       <HeadingPrimary
@@ -17,6 +24,8 @@ const FaqSection = ({ extreHtml }) => {
               className="img-fluid"
               src="/assets/images/FAQs.svg"
               alt="About Images"
+              data-sal="slide-right"
+              data-sal-duration="1200"
             />
           </div>
           <div className="col-12 col-lg-7 mt-5 mt-lg-0 px-0 px-lg-2">
@@ -46,7 +55,7 @@ const FaqSection = ({ extreHtml }) => {
           </div>
         </div>
       </div>
-      {extreHtml ? extreHtml : ""}
+      {extreHtml ? <Wave imageUrl="/assets/images/wave-white.svg" /> : ""}
       <style jsx>{`
         section {
           background: #fafafa !important;

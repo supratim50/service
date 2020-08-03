@@ -1,8 +1,15 @@
+import { useEffect } from "react";
+import sal from "sal.js";
+
 import PrimaryHeading from "../heading/primaryHeading";
 import PrimaryButton from "../buttons/PrimaryButton";
 import Wave from "../wave/wave";
 
 const AboutUs = () => {
+  useEffect(() => {
+    sal();
+  });
+
   return (
     <section className="section-pt section-pb position-relative">
       <div className="container">
@@ -18,7 +25,11 @@ const AboutUs = () => {
               alt="About Images"
             />
           </div>
-          <div className="col-12 col-lg-7 mt-5 mt-lg-0 px-0 px-lg-2">
+          <div
+            className="col-12 col-lg-7 mt-5 mt-lg-0 px-0 px-lg-2"
+            data-sal="slide-left"
+            data-sal-duration="1200"
+          >
             <p className="paragraph-text text-dark-grey mb-0">
               Webguru Infosystems, an ISO 9001:2015 certified futuristic
               technology firm offers total digital solutions for a global

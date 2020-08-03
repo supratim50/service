@@ -1,5 +1,5 @@
 import { FiX } from "react-icons/fi";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 // components
@@ -8,12 +8,23 @@ import Navbar from "../navbar/navbar";
 
 const TopHeader = () => {
   const [close, setClose] = useState(false);
+  const [Yaxis, setYaxis] = useState(0);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setYaxis(window.scrollY);
+      console.log("state", Yaxis);
+      console.log("scrollY", window.scrollY);
+    });
+  }, [Yaxis]);
+
   const closeTop = () => setClose(true);
+  // ${Yaxis === 0 || Yaxis > window.scrollY ? "show" : ""}
 
   return (
-    <section className="sticky-top">
+    <section className="sticky-top" style={{ top: -1 }}>
       <div
-        className={`top-nav w-100 p-4 py-md-3 d-flex flex-column flex-md-row justify-content-md-center align-items-center ${
+        className={`top-nav fixed-top w-100 p-2 py-md-3 px-md-4 d-flex flex-column flex-md-row justify-content-md-center align-items-center ${
           close ? "close" : ""
         }`}
       >
@@ -21,9 +32,9 @@ const TopHeader = () => {
           Limited time offer, Hurry up!
         </p>
         <Link href="/">
-          <a>
+          <a className="text-decoration-none">
             <PrimaryButton
-              classList="py-2 px-3 mt-3 mt-md-0 ml-md-4"
+              classList="py-1 px-2 py-md-2 px-md-3 mt-3 mt-md-0 ml-md-4"
               title="Contact us"
             />
           </a>
@@ -31,30 +42,44 @@ const TopHeader = () => {
         <i onClick={closeTop} className="position-absolute text-white cross">
           <FiX />
         </i>
-        <style jsx>{`
-          .top-nav {
-            background-color: #000622;
-          }
-          .cross {
-            right: 15px;
-            top: 19px;
-            cursor: pointer;
-          }
-          @media screen and (max-width: 767px) {
-            .cross {
-              right: 15px;
-            }
-          }
-          .close {
-            display: none !important;
-          }
-        `}</style>
       </div>
       {close ? (
         <Navbar close textColor="text-white" />
       ) : (
         <Navbar textColor="text-white" />
       )}
+
+      <style jsx>{`
+        .top-nav {
+          background-color: #000622;
+          transition: 0.5s;
+           {
+            /* transform: translateY(-100%) !important;
+          visibility: hidden !important; */
+          }
+        }
+        .cross {
+          right: 15px;
+          top: 19px;
+          cursor: pointer;
+        }
+        @media screen and (max-width: 767px) {
+          .cross {
+            right: 10px;
+            top: 4px;
+          }
+        }
+        .close {
+          display: none !important;
+        }
+
+         {
+          /* .show {
+          transform: translateY(0%) !important;
+          visibility: visible !important;
+        } */
+        }
+      `}</style>
     </section>
   );
 };

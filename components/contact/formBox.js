@@ -13,7 +13,7 @@ const FormBox = ({ classList }) => {
       <Input placeholder="Phone" classList="mt-3" />
       <Textarea placeholder="Message" classList="mt-3" />
       <Link href="/">
-        <a>
+        <a className="text-decoration-none">
           <PrimaryButton classList="mt-4 w-100 py-3" title="Send Now" />
         </a>
       </Link>

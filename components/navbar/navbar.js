@@ -16,7 +16,7 @@ const Navbar = ({ close, textColor }) => {
     window.addEventListener("scroll", () => {
       setYaxis(window.scrollY);
     });
-  }, Yaxis);
+  }, [Yaxis]);
 
   return (
     <div
@@ -24,7 +24,7 @@ const Navbar = ({ close, textColor }) => {
         Yaxis === 0 ? "" : "scrolled"
       }`}
     >
-      <nav className="navbar navbar-expand-lg py-3">
+      <nav className="navbar navbar-expand-lg py-2 py-md-3">
         <div className="container position-relative">
           <Link href="/">
             <a>
@@ -39,7 +39,7 @@ const Navbar = ({ close, textColor }) => {
           </Link>
           {/* side bar */}
           <div
-            class="position-absolute d-inline-block d-lg-none"
+            className="position-absolute d-inline-block d-lg-none"
             style={{ top: 0, right: 20 }}
             onClick={() => setShow(!show)}
           >
@@ -53,7 +53,7 @@ const Navbar = ({ close, textColor }) => {
           </div>
 
           <div
-            class={`nav-main-box collapse navbar-collapse ${
+            className={`nav-main-box collapse navbar-collapse ${
               show ? "show" : ""
             }`}
           >
@@ -70,7 +70,7 @@ const Navbar = ({ close, textColor }) => {
                     </li>
                   </a>
                 </Link>
-                <Link href="/about-us">
+                <Link href="/about">
                   <a className="text-decoration-none">
                     <li
                       className={`nav-item ${
@@ -122,7 +122,8 @@ const Navbar = ({ close, textColor }) => {
       <style jsx>{`
         .home-nav {
           top: 90px;
-          transition: 0.5s;
+          transition: 0.5s !important;
+          z-index: 1020;
         }
         .scrolled {
           top: 70px !important;
@@ -134,7 +135,7 @@ const Navbar = ({ close, textColor }) => {
         .scrolled .social-icon,
         .scrolled .navbar-brand,
         .scrolled .bar-btn {
-          color: rgba(33, 48, 77, 0.79) !important;
+          color: #03215d !important;
         }
 
         .closed {
@@ -178,7 +179,7 @@ const Navbar = ({ close, textColor }) => {
         @media screen and (max-width: 767px) {
           .home-nav,
           .scrolled {
-            top: 122px !important;
+            top: 87px !important;
           }
 
           .closed {

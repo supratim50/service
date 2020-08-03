@@ -5,7 +5,7 @@ const FooterSection = () => {
   return (
     <section>
       <div className="container">
-        <div className="row mx-auto">
+        <div className="nav-box row mx-auto">
           <div className="col-12 col-md-6 col-lg-3 px-0 pt-5 pt-lg-0">
             <h3 className="heading-secondary text-white font-weight-bold text-uppercase mb-4">
               Data Anawer
@@ -160,16 +160,48 @@ const FooterSection = () => {
           </div>
         </div>
       </div>
+      {/* lower footer */}
+      <div className="lower-footer w-100 py-4">
+        <div className="container px-0">
+          <div className="d-flex justify-content-center align-items-center">
+            <div className="lower-nav-box px-3 heading-secondary font-weight-light text-light-grey">
+              Privacy
+            </div>
+            <div className="lower-nav-box px-3 heading-secondary font-weight-light text-light-grey">
+              Terms & Condition
+            </div>
+            <div className="lower-nav-box px-3 heading-secondary font-weight-light text-light-grey">
+              FavFly
+            </div>
+          </div>
+          <p className="heading-secondary text-light-grey text-uppercase text-center mb-0 mt-3">
+            &copy; FavFly Inc.. 2020 All rights reserved.
+          </p>
+        </div>
+      </div>
       <style jsx>{`
         section {
           background-color: #020a2c !important;
           padding-top: 134px !important;
-          padding-bottom: 90px !important;
+          margin-top: -1px !important;
         }
         @media screen and (max-width: 767px) {
           section {
             padding-top: 44px !important;
           }
+        }
+        .nav-box {
+          padding-bottom: 90px !important;
+        }
+
+         {
+          /* lower footer */
+        }
+        .lower-footer {
+          background-color: #000622 !important;
+        }
+        .lower-nav-box:not(:first-child) {
+          border-left: 1px solid rgba(196, 196, 196, 0.6);
         }
       `}</style>
     </section>

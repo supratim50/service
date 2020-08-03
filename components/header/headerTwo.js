@@ -3,38 +3,28 @@ import HeadingPrimary from "../heading/primaryHeading";
 import PrimaryBtn from "../buttons/PrimaryButton";
 import Wave from "../wave/wave";
 
-const HeaderTwo = () => {
+const HeaderTwo = ({ heading, paragraph, btnText, imageUrl }) => {
   return (
     <section className="section-pt section-pb position-relative">
       <div className="container">
         <div className="row mx-auto">
-          <div className="col-12 col-md-8">
+          <div className="col-12 col-lg-8">
             <HeadingPrimary
-              title="Contact Us"
+              title={heading}
               classList="font-weight-bold text-dark-blue text-capitalize mb-4"
             />
-            <p className="paragraph-text text-dark-grey mb-4">
-              We offer professional and affordable solutions for all your
-              website design, mobile app development, corporate branding and
-              digital marketing requirements. Let us know what you need or leave
-              us a message with your contact details and we will get back to you
-              soon.
-            </p>
+            <p className="paragraph-text text-dark-grey mb-4">{paragraph}</p>
             <Link href="/">
               <a>
                 <PrimaryBtn
                   classList="px-4 py-3 d-inline-block"
-                  title="Send Query"
+                  title={btnText}
                 />
               </a>
             </Link>
           </div>
-          <div className="col-12 col-md-4 text-center text-md-right mt-5 mt-md-0 pt-5 pt-md-0">
-            <img
-              src="/assets/images/ContactUs.svg"
-              className="img-fluid"
-              alt="Image"
-            />
+          <div className="col-12 col-lg-4 text-center text-lg-right mt-5 mt-lg-0 pt-5 pt-lg-0">
+            <img src={imageUrl} className="img-fluid" alt="Image" />
           </div>
         </div>
       </div>

@@ -2,6 +2,8 @@ import React from "react";
 import App from "next/app";
 import Head from "next/head";
 import DefaultLayout from "../components/layouts/default-layout";
+
+import "sal.js/dist/sal.css";
 import "bootstrap/dist/css/bootstrap.css";
 class MyApp extends App {
   render() {

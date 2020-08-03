@@ -1,17 +1,27 @@
 import Link from "next/link";
+import { useEffect } from "react";
+import sal from "sal.js";
 
 import FormBox from "../contact/formBox";
 import PrimaryHeading from "../heading/primaryHeading";
 import SecondaryButton from "../buttons/secondaryButton";
 
 const Header = () => {
+  useEffect(() => {
+    sal();
+  });
+
   return (
     <section className="header section-pb">
       <div className="container position-relative">
-        <div className="row mx-auto section-pt">
+        <div className="row mx-auto" style={{ paddingTop: 230 }}>
           {/* heading */}
           <div className="col-12 col-lg-6 d-flex align-items-center px-0">
-            <div className="heading-box text-center text-lg-left pb-5 pb-lg-0 mb-5 mb-lg-0">
+            <div
+              className="heading-box text-center text-lg-left pb-5 pb-lg-0 mb-5 mb-lg-0"
+              data-sal="slide-right"
+              data-sal-duration="1200"
+            >
               <PrimaryHeading
                 title="Powerful and flexible tools for your system"
                 classList="font-weight-bold text-white"

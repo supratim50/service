@@ -2,7 +2,7 @@ import HeadingPrimary from "../heading/primaryHeading";
 import CLientComponent from "./clientComponent";
 import Wave from "../wave/wave";
 
-const ClientSection = () => {
+const ClientSection = ({ extraHtml }) => {
   return (
     <section className="section-pt section-pb position-relative">
       <HeadingPrimary
@@ -67,7 +67,7 @@ const ClientSection = () => {
           </div>
         </div>
       </div>
-      <Wave imageUrl="/assets/images/wave-grey.svg" />
+      {extraHtml ? <Wave imageUrl="/assets/images/wave-grey.svg" /> : ""}
       <style jsx>{`
         .row {
           margin-top: 70px !important;

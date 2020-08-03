@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import sal from "sal.js";
 import { FaCompressAlt } from "react-icons/fa";
 
 import PrimaryHeading from "../heading/primaryHeading";
@@ -5,6 +7,10 @@ import FeaturesComponents from "./featuresComponents";
 import Wave from "../wave/wave";
 
 const Features = () => {
+  useEffect(() => {
+    sal();
+  });
+
   return (
     <section className="section-pt section-pb position-relative">
       <PrimaryHeading
@@ -19,6 +25,8 @@ const Features = () => {
           text="Loo car boot bodge smashing I up the duff horse play give us a
               bell, William bugger all mate happy days.!"
           imageUrl="/assets/images/Feature-1.svg"
+          dataSal="slide-right"
+          dataSalDuration="1200"
         />
         <FeaturesComponents
           classList="sky"
@@ -28,6 +36,8 @@ const Features = () => {
           text="Loo car boot bodge smashing I up the duff horse play give us a
               bell, William bugger all mate happy days.!"
           imageUrl="/assets/images/Feature-2.svg"
+          dataSal="slide-left"
+          dataSalDuration="1200"
         />
         <FeaturesComponents
           classList="yellow"
@@ -36,6 +46,8 @@ const Features = () => {
           text="Loo car boot bodge smashing I up the duff horse play give us a
               bell, William bugger all mate happy days.!"
           imageUrl="/assets/images/Feature-3.svg"
+          dataSal="slide-right"
+          dataSalDuration="1200"
         />
         <FeaturesComponents
           classList="violate"
@@ -45,6 +57,8 @@ const Features = () => {
           text="Loo car boot bodge smashing I up the duff horse play give us a
               bell, William bugger all mate happy days.!"
           imageUrl="/assets/images/Feature-4.svg"
+          dataSal="slide-left"
+          dataSalDuration="1200"
         />
       </div>
 

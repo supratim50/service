@@ -5,26 +5,24 @@ import PrimaryBtn from "../buttons/PrimaryButton";
 
 const MessageSection = () => {
   return (
-    <section>
-      <div className="container text-center position-relative">
-        <img
-          src="/assets/images/message.png"
-          className="back-img position-absolute"
+    <section className=" position-relative">
+      <img
+        src="/assets/images/message.png"
+        className="back-img position-absolute"
+      />
+      <div className="container text-center">
+        <HeadingPrimary
+          title="You can even send us your MESSAGE"
+          classList="text-white"
         />
-        <div className="text-box">
-          <HeadingPrimary
-            title="You can even send us your MESSAGE"
-            classList="text-white"
-          />
-          <Link href="">
-            <a>
-              <PrimaryBtn
-                classList="mt-5 py-3 px-4 d-inline-block"
-                title="Send Now"
-              />
-            </a>
-          </Link>
-        </div>
+        <Link href="">
+          <a>
+            <PrimaryBtn
+              classList="mt-5 py-3 px-4 d-inline-block"
+              title="Send Now"
+            />
+          </a>
+        </Link>
       </div>
       <style jsx>{`
         section {
@@ -39,7 +37,7 @@ const MessageSection = () => {
           transform: translate(-50%, -50%);
         }
         .text-box {
-          background: red;
+          /* background: red; */
           z-index: 2;
         }
       `}</style>

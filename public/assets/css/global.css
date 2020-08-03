@@ -8,6 +8,10 @@
   color: rgba(33, 48, 77, 0.79) !important;
 }
 
+.bg-light-grey {
+  background: #fafafa !important;
+}
+
 /* ========================= text =======================  */
 /* color  */
 .text-white {
@@ -59,7 +63,7 @@
 }
 
 .section-pb {
-  padding-bottom: 210px !important;
+  padding-bottom: 150px !important;
 }
 
 .margin-top {
