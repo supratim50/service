@@ -6,11 +6,7 @@ import PrimaryBtn from "../buttons/PrimaryButton";
 const MessageSection = () => {
   return (
     <section className=" position-relative">
-      <img
-        src="/assets/images/message.png"
-        className="back-img position-absolute"
-      />
-      <div className="container text-center">
+      <div className="container text-center" style={{ zIndex: 2 }}>
         <HeadingPrimary
           title="You can even send us your MESSAGE"
           classList="text-white"
@@ -24,10 +20,24 @@ const MessageSection = () => {
           </a>
         </Link>
       </div>
+      {/* 
+      <img
+        src="/assets/images/message.png"
+        className="back-img position-absolute"
+        style={{ zIndex: 1 }}   
+      /> */}
       <style jsx>{`
         section {
           padding: 136px 0;
-          background: linear-gradient(360deg, #020a2c 36.46%, #00067d 100%);
+          background: url(/assets/images/message.png),
+            linear-gradient(360deg, #020a2c 36.46%, #00067d 100%);
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        @media screen and (max-width: 600px) {
+          section {
+            background-size: contain;
+          }
         }
         .back-img {
           width: 100% !important;

@@ -12,7 +12,7 @@ const Header = () => {
   });
 
   return (
-    <section className="header section-pb">
+    <section className="header section-pb overflow-hidden">
       <div className="container position-relative">
         <div className="row mx-auto" style={{ paddingTop: 230 }}>
           {/* heading */}

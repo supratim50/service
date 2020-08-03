@@ -1,11 +1,18 @@
+import { useEffect } from "react";
+import sal from "sal.js";
+
 import Link from "next/link";
 import HeadingPrimary from "../heading/primaryHeading";
 import PrimaryBtn from "../buttons/PrimaryButton";
 import Wave from "../wave/wave";
 
 const HeaderTwo = ({ heading, paragraph, btnText, imageUrl }) => {
+  useEffect(() => {
+    sal();
+  });
+
   return (
-    <section className="section-pt section-pb position-relative">
+    <section className="section-pt section-pb position-relative overflow-hidden">
       <div className="container">
         <div className="row mx-auto">
           <div className="col-12 col-lg-8">
@@ -24,7 +31,13 @@ const HeaderTwo = ({ heading, paragraph, btnText, imageUrl }) => {
             </Link>
           </div>
           <div className="col-12 col-lg-4 text-center text-lg-right mt-5 mt-lg-0 pt-5 pt-lg-0">
-            <img src={imageUrl} className="img-fluid" alt="Image" />
+            <img
+              src={imageUrl}
+              className="img-fluid"
+              alt="Image"
+              data-sal="slide-left"
+              data-sal-duration="1200"
+            />
           </div>
         </div>
       </div>

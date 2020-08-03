@@ -11,7 +11,7 @@ const AboutUs = () => {
   });
 
   return (
-    <section className="section-pt section-pb position-relative">
+    <section className="section-pt section-pb position-relative overflow-hidden">
       <div className="container">
         <PrimaryHeading
           title="Some informations about us"

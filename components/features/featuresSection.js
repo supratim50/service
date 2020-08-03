@@ -12,7 +12,7 @@ const Features = () => {
   });
 
   return (
-    <section className="section-pt section-pb position-relative">
+    <section className="section-pt section-pb position-relative overflow-hidden">
       <PrimaryHeading
         title="Get to know or FEATURES"
         classList="font-weight-bold text-dark-blue text-center"

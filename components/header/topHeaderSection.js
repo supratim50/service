@@ -8,15 +8,28 @@ import Navbar from "../navbar/navbar";
 
 const TopHeader = () => {
   const [close, setClose] = useState(false);
-  const [Yaxis, setYaxis] = useState(0);
+  const [hidden, setHidden] = useState(false);
 
+  // ===== HIDE ON SCROLL =====
   useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    var lastScrollTop = 0;
+    const topNav = document.getElementById("topNav");
     window.addEventListener("scroll", () => {
-      setYaxis(window.scrollY);
-      console.log("state", Yaxis);
-      console.log("scrollY", window.scrollY);
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop) {
+        // topNav.style.top = "-200px";
+        setHidden(true);
+      } else {
+        // topNav.style.top = "0px";
+        setHidden(false);
+      }
+      lastScrollTop = scrollTop;
     });
-  }, [Yaxis]);
+  }, []);
 
   const closeTop = () => setClose(true);
   // ${Yaxis === 0 || Yaxis > window.scrollY ? "show" : ""}
@@ -24,9 +37,10 @@ const TopHeader = () => {
   return (
     <section className="sticky-top" style={{ top: -1 }}>
       <div
+        id="topNav"
         className={`top-nav fixed-top w-100 p-2 py-md-3 px-md-4 d-flex flex-column flex-md-row justify-content-md-center align-items-center ${
           close ? "close" : ""
-        }`}
+        } ${hidden ? "hidden" : ""}`}
       >
         <p className="paragraph-text text-uppercase mb-0 text-white heading-secondary">
           Limited time offer, Hurry up!
@@ -43,24 +57,30 @@ const TopHeader = () => {
           <FiX />
         </i>
       </div>
-      {close ? (
+      {/* {close ? (
         <Navbar close textColor="text-white" />
       ) : (
         <Navbar textColor="text-white" />
+      )} */}
+
+      {!close ? (
+        hidden ? (
+          <Navbar hidden textColor="text-white" />
+        ) : (
+          <Navbar textColor="text-white" />
+        )
+      ) : (
+        <Navbar close textColor="text-white" />
       )}
 
       <style jsx>{`
         .top-nav {
           background-color: #000622;
           transition: 0.5s;
-           {
-            /* transform: translateY(-100%) !important;
-          visibility: hidden !important; */
-          }
         }
         .cross {
           right: 15px;
-          top: 19px;
+          top: 23px;
           cursor: pointer;
         }
         @media screen and (max-width: 767px) {
@@ -72,12 +92,9 @@ const TopHeader = () => {
         .close {
           display: none !important;
         }
-
-         {
-          /* .show {
-          transform: translateY(0%) !important;
-          visibility: visible !important;
-        } */
+        .hidden {
+          transform: translateY(-100%) !important;
+          visibility: hidden !important;
         }
       `}</style>
     </section>

@@ -8,7 +8,7 @@ import {
   FaBars,
 } from "react-icons/fa";
 import Link from "next/link";
-const Navbar = ({ close, textColor }) => {
+const Navbar = ({ close, textColor, hidden }) => {
   const [Yaxis, setYaxis] = useState(0);
   const [show, setShow] = useState(false);
 
@@ -20,7 +20,7 @@ const Navbar = ({ close, textColor }) => {
 
   return (
     <div
-      className={`fixed-top home-nav ${close ? "closed" : ""} ${
+      className={`fixed-top home-nav ${close || hidden ? "closed" : ""} ${
         Yaxis === 0 ? "" : "scrolled"
       }`}
     >
@@ -92,6 +92,17 @@ const Navbar = ({ close, textColor }) => {
                     </li>
                   </a>
                 </Link>
+                {/* <Link href="/">
+                  <a className="text-decoration-none">
+                    <li
+                      className={`nav-item ${
+                        textColor ? textColor : ""
+                      } ml-0 ml-lg-5 p-3 p-lg-0`}
+                    >
+                      Option X
+                    </li>
+                  </a>
+                </Link> */}
               </ul>
             </div>
             <div className="social-box ml-auto">
